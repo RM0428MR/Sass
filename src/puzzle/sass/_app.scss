@@ -1,0 +1,51 @@
+@use 'variable';
+@use 'mixin';
+
+.header {
+  @include mixin.size(100px, 400px);
+  background-color: variable.$navy;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+
+  &__inner {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    margin: 20px 20px 0 0;
+    background-color: variable.$white;
+
+    @include mixin.color-boxes(40px, 40px);
+  }
+}
+
+.layout-flex {
+  @include mixin.size(250px, 400px);
+  display: flex;
+}
+
+.sidebar {
+  @include mixin.size(250px, 150px);
+  background-color: variable.$green;
+}
+
+
+.main {
+  @include mixin.size(250px, 250px);
+  background-color: variable.$red;
+
+  &__inner {
+    padding: 40px 0 0 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    @include mixin.color-boxes(40px, 140px, 5px solid variable.$white);
+  }
+}
+
+.footer {
+  @include mixin.size(100px, 400px);
+  background-color: variable.$brown;
+}

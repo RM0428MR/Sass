@@ -1,0 +1,18 @@
+@use 'variable';
+
+@mixin size($height, $width) {
+  height: $height;
+  width: $width;
+}
+
+@mixin color-boxes($height, $width, $border: null) {
+  @each $className in variable.$classNames {
+    $index_key: index(variable.$classNames, $className);
+
+    .#{$className} {
+      @include size($height, $width);
+      background-color: nth(variable.$buttonColor, $index_key);
+      border: $border;
+    }
+  }
+}
